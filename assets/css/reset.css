@@ -24,7 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(text-primary);
+    color: var(--primary);
 }
 
 /* Background && color + improve rendering */
@@ -71,14 +71,14 @@ a{
     color: var(--text-primary);
 }
 
-/* change default scrollbar */
+/* Change default scrollbar */
 ::-webkit-scrollbar{
     background: transparent;
     border-left: 1px solid var(--background-disabled);
 }
 
 ::-webkit-scrollbar-thumb{
-    background: transparent;
+    background: var(--rich-black-29);
     border-radius: 5em;
-    border: 3px solid var(--rich-black-29);
+    border: 1px solid var(--primary);
 }
