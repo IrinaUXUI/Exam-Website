@@ -14,10 +14,14 @@
 /* Reused style */
 header, nav{
     background: var(--rich-black-29);
+    border-radius: 0px 0px 16px 16px;
 }
 
-.navbar{
-    padding: 0 var(--px);
+.navbar, /* or banner UPSIDE  TODO*/ 
+.banner,
+.movies
+{
+    padding: 0 var(--px);   
 }
 
 
@@ -75,7 +79,7 @@ nav{
     background: var(--live-indicator);
     position: absolute;
     top: calc(50% - 1px);
-    right: -10px;
+    right: -12px;
     width: 4px;
     height: 4px;
     box-shadow: 0 0 0 2px var(--live-indicator-shadow);
@@ -101,4 +105,202 @@ nav{
     color: var(--text-primary);
     font-size: var(--fs-md);
     font-weight: var(--fw-6);
+}
+
+.navbar-form-btn{
+    background: var(--background);
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 10px;
+}
+
+.navbar-form-btn ion-icon,
+.navbar-search-btn ion-icon{
+    font-size: var(--fs-md);
+    color: var(--primary);
+    --ionicon-stroke-width: 50px;
+}
+
+.navbar-form-btn:hover ion-icon,
+.navbar-form-search::placeholder{
+    color: var(--text-secondary);
+}
+
+/* Navbar form close btn && navbar search button *** form small device** */
+.navbar-form-close,
+.navbar-search-btn{
+    display: none;
+}
+
+.navbar-signin{
+    display: flex;
+    align-items: center;
+    font-size: var(--fs-md);
+}
+
+.navbar-signin ion-icon{
+    font-size: 28px;
+    color: var(--primary);
+    margin-left: 5px;
+    --ionicon-stroke-width: 30px;
+}
+
+.navbar-signin:hover span{
+    color: var(--primary);
+}
+
+
+/*--------------------------------------*\
+               MAIN
+\*--------------------------------------*/
+
+/* Banner card style */
+.banner{
+    margin-top: 30px; 
+    margin-bottom: 30px;/* TODO was 60px and without margin-top*/
+}
+
+.banner-card{
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.banner-img{
+    object-position: top;
+}
+
+.banner-card:hover .banner-img{
+  /*  style="background:linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,1));"    TODO if needed*/
+    transform: scale(1.1); /*TODO fix this*/
+    /*transition: transform 330ms ease-in-out; TODO this is not in the main code*/
+}
+
+.banner-card .card-content{
+    position: absolute;
+    right: 80px;
+    bottom: 60px;
+    left: 80px;
+}
+
+.banner-card .card-info{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.banner-card .card-info div{
+    display:  flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.banner-card .card-info ion-icon{
+    font-size: 20px;
+    color: var(--live-indicator);
+    margin-right: 5px;
+}
+
+.banner-card .card-info span{
+    font-weight: var(--fw-6);
+    color: var(--text-primary);
+}
+
+.banner-card .card-info .quality{
+    background: var(--live-indicator);
+    color: var(--background);
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-weight: var(--fw-7);
+}
+
+.banner-card .card-title{
+    font-size: 3em;
+    color: var(--text-primary);
+    text-shadow: 3px 0 3px #0007;
+}
+
+
+/*--------------------------------------*\
+               MOVIES SECTION
+\*--------------------------------------*/
+
+.movies{
+    margin-bottom: 60px;
+}
+
+/* Filter bar style */
+.filter-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--rich-black-29);
+    padding: 20px 30px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+}
+
+.filter-bar select{
+    color: var(--primary);
+    font-size: var(--fs-sm);
+    margin-right: 15px;
+    cursor: pointer;
+   /* background-color: #82caff;  changes background of fields*/
+}
+
+.filter-bar option{
+background: var(--background);
+}
+
+.filter-radios{ /*TODO change the color of check*/
+    position: relative;
+    color: var(--text-primary);
+    background: var(--rich-black-30);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.filter-radios input{
+    display: none;
+}
+
+.filter-radios label{
+    position: relative;
+    margin: 0 10px;
+    font-size: var(--fs-sm);
+    user-select: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.filter-radios input:checked + label,
+.filter-radios label:hover{
+    color: var(--primary-hover);
+}
+
+input ~ .checked-radio-bg{ /*TODO check ~*/
+    /*variable for change position and size based on radio checked */
+    --width: 90px;
+    --left: 5px;
+
+    background: var(--background);
+    position: absolute;
+    color: var(--primary-clicked);
+    top: 5px;
+    left: var(--left);
+    bottom: 5px;
+    width: var(--width);
+    border-radius: 8px;
+}
+
+#popular:checked ~ .checked-radio-bg{
+    --width: 80px;
+    --left: 94px;
+}
+
+#newest:checked ~ .checked-radio-bg{
+    --width: 75px;
+    --left: 175px;
 }

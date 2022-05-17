@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    transition: all 0.5 ease;
+    transition: all .5s ease-in-out;
 }
 
 /* More-intuitive box-sizing model */
@@ -31,7 +31,7 @@ h6 {
 body {
     background: var(--background);
     color: var(--text-secondary);
-    -webkit-flow-smoothing: antialiased;
+    -webkit-flow-smoothing: antialiased ;
 }
 
 /* Change img */
