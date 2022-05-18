@@ -62,7 +62,7 @@ nav{
 }
 
 .navbar-link{
-    font-size: var(--fs-lg); /* former sm*/
+    font-size: var(--fs-md); /* former sm*/
     font-weight: var(--fw-5); /*former 5*/
 }
 
@@ -246,6 +246,7 @@ nav{
     color: var(--primary);
     font-size: var(--fs-sm);
     margin-right: 15px;
+    font-weight: var(--fw-7);
     cursor: pointer;
    /* background-color: #82caff;  changes background of fields*/
 }
@@ -257,7 +258,7 @@ background: var(--background);
 .filter-radios{ /*TODO change the color of check*/
     position: relative;
     color: var(--text-primary);
-    background: var(--rich-black-30);
+    background: var(--background);
     padding: 10px;
     border-radius: 8px;
 }
@@ -270,6 +271,7 @@ background: var(--background);
     position: relative;
     margin: 0 10px;
     font-size: var(--fs-sm);
+    font-weight: var(--fw-7);
     user-select: none;
     cursor: pointer;
     z-index: 10;
@@ -282,25 +284,143 @@ background: var(--background);
 
 input ~ .checked-radio-bg{ /*TODO check ~*/
     /*variable for change position and size based on radio checked */
-    --width: 90px;
-    --left: 5px;
+    --width: 82px;
+    --left: 10px;
 
-    background: var(--background);
+    background: var(--rich-black-29);
     position: absolute;
     color: var(--primary-clicked);
-    top: 5px;
+    top: 8px;
     left: var(--left);
-    bottom: 5px;
+    bottom: 8px;
     width: var(--width);
     border-radius: 8px;
 }
 
 #popular:checked ~ .checked-radio-bg{
-    --width: 80px;
-    --left: 94px;
+    --width: 76px;
+    --left: 98px;
 }
 
 #newest:checked ~ .checked-radio-bg{
-    --width: 75px;
-    --left: 175px;
+    --width: 73px;
+    --left: 178px;
+}
+
+
+/* Movies grid */
+.movies-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.movie-card{
+/* var for scaling overlay el on card hover */
+--scale:0.8;
+cursor: pointer;
+}
+
+.movie-card .card-head{
+    position: relative;
+    height: 250px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.movie-card:hover .card-img{
+    transform: scale(1.1);
+}
+
+.movie-card .card-overlay{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    backdrop-filter: blur(5px);
+}
+
+.movie-card:hover .card-overlay{
+    opacity: 1;
+}
+
+.movie-card .bookmark,
+.movie-card .rating{
+    position: absolute;
+    top: 15px;
+    padding: 6px;
+    border-radius: 8px;
+    color: var(--warning);
+    transform: scale(var(--scale));
+}
+
+.movie-card .bookmark{
+    background: var(--background);
+    left: 15px;
+}
+
+.movie-card .bookmark:hover{
+    color: var(--background);
+    background: var(--primary);
+}
+
+.movie-card .rating{
+    display: flex;
+    align-items: center;
+    right: 15px;
+    background: var(--background);
+}
+
+.movie-card .rating span{
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: var(--fw-6);
+    margin-left: 6px;   
+}
+
+.movie-card ion-icon{
+    font-size: 16px;
+    display: block;
+    --ionicon-stroke-width:60px;
+}
+
+.movie-card .chat{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--scale));
+    color: var(--primary);
+    background: var(--background);
+    border: 5px solid var(--background);
+    border-radius: 8px;
+}
+
+.movie-card .chat ion-icon{
+    font-size: 60px;
+    --ionicon-stroke-width:20px;
+}
+
+.movie-card:hover :is(.bookmark, .rating, .chat){
+    --scale: 1;
+}
+
+.movie-card .card-title{
+    font-size: var(--fs-md);
+    font-weight: var(--fw-7);
+    margin-bottom: 5px;
+}
+
+.movie-card:hover .card-title{
+    color: var(--text-primary);
+}
+
+.movie-card .card-info{
+    display: flex;
+    font-size: var(--fs-x-sm);
+    font-weight: var(--fw-6);
+}
+
+.movie-card .genre{
+    margin-right: 8px;
 }
