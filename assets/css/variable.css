@@ -12,13 +12,13 @@
     --background: #00002D;
     --background-disabled: #4A4A4A;
     --primary:#FF7300;
-    --primary-hover:#FF7300;
-    --primary-clicked:#DD6400;
+    --primary-hover:#DD6400;
+    --primary-clicked:#BB5400;
     --success: #64FF00;
     --warning: #E7FF00;
     --error: #FC49AB;
     --information: #0ADCFF; 
-    --text-primary:#F8FEFF;
+    --text-primary:#D9D9D9;
     --text-secondary: #9D9D9D;
 
     /* Typography */
