@@ -650,7 +650,7 @@ cursor: pointer;
 
 footer{
     background: var(--rich-black-29);
-    padding:  40px var(--px) 40px;
+    padding:  80px var(--px) 40px;
     border-radius: 16px 16px 0 0 ;
 }
 
@@ -668,6 +668,7 @@ footer{
 }
 
 .footer-logo{
+    margin-top: -25px;
     width: 100px;
     margin-bottom: 30px;
 }
@@ -732,5 +733,8 @@ ul.link-item:not(:last-child){
 
 .wrapper{
     display: flex;
-    margin-right: 35px;
+}
+
+.wrapper a:not(:last-child){
+    margin-right: 20px;
 }
