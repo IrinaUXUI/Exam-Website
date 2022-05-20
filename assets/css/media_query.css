@@ -274,6 +274,7 @@
 
     .filter-bar select {
         margin-bottom: 20px;
+        padding-left: 25vw; /*https://stackoverflow.com/questions/39321053/make-padding-responsive */
     }
 
     .filter-radios {
