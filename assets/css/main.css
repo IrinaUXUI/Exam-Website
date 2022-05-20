@@ -650,7 +650,8 @@ cursor: pointer;
 
 footer{
     background: var(--rich-black-29);
-    padding:  80px var(--px) 40px;
+   /* padding:  80px var(--px) 40px;*/
+    padding:  80px 0 40px;
     border-radius: 16px 16px 0 0 ;
 }
 
@@ -665,6 +666,7 @@ footer{
 .footer-brand{
     max-width: 250px;
     margin-right: 130px;
+    margin-left: 80px;
 }
 
 .footer-logo{
@@ -697,6 +699,7 @@ footer{
     grid-template-columns: repeat(4, 1fr);
     gap: 50px;
     align-items: flex-end;
+    /*margin-right: 80px;  */ 
 }
 
 .link.heading{
@@ -720,6 +723,7 @@ ul.link-item:not(:last-child){
     justify-content: space-between;
     align-items: center;
     padding-top: 10px;
+    margin-left: 80px;
 }
 
 .footer-copyright p,
@@ -733,8 +737,10 @@ ul.link-item:not(:last-child){
 
 .wrapper{
     display: flex;
+    margin-right: 80px;
 }
 
 .wrapper a:not(:last-child){
     margin-right: 20px;
 }
+
