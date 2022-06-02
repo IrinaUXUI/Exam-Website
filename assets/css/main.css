@@ -447,7 +447,7 @@ cursor: pointer;
     font-size: var(--fs-md);
     font-weight: var(--fw-7);
     border-radius: 5px;
-    color: var(--text-primary);
+    color: var(--background);
 }
 
 .load-more:hover{
